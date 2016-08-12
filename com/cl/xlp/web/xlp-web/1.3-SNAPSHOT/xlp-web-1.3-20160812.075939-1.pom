@@ -1,0 +1,71 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.cl.xlp</groupId>
+        <artifactId>xlp-parent</artifactId>
+        <version>1.3-SNAPSHOT</version>
+    </parent>
+
+    <groupId>com.cl.xlp.web</groupId>
+    <artifactId>xlp-web</artifactId>
+    <version>1.3-SNAPSHOT</version>
+
+    <packaging>pom</packaging>
+
+    <name>XLP :: Web</name>
+    <description>web modules go here</description>
+
+    <modules>
+        <module>marshal</module>
+        <module>control</module>
+        <module>presentation</module>
+        <!-- <module>ui</module> -->
+        <module>generator</module>
+    </modules>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-war-plugin</artifactId>
+                    <version>2.3</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.0.1</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <profiles>
+        <!-- Development environment -->
+        <profile>
+            <id>development</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <extjs.artifactId>extjs-wrapped-debug</extjs.artifactId>
+                <mxgraph.core.artifactId>mxgraph-wrapped-debug</mxgraph.core.artifactId>
+            </properties>
+        </profile>
+        <!-- Production environment -->
+        <profile>
+            <id>production</id>
+            <properties>
+                <extjs.artifactId>extjs-wrapped</extjs.artifactId>
+                <mxgraph.core.artifactId>mxgraph-wrapped</mxgraph.core.artifactId>
+            </properties>
+        </profile>
+    </profiles>
+
+</project>
