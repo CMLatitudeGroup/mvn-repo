@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <plugins>
+    <plugin>
+      <name>XLP :: Web ExtJS UI Model Generator Mvn Plugin</name>
+      <prefix>xlp-ui-js-generator</prefix>
+      <artifactId>xlp-ui-js-generator-maven-plugin</artifactId>
+    </plugin>
+  </plugins>
+</metadata>

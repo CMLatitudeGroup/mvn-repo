@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>com.insoft.xlp.web.generator</groupId>
+  <artifactId>xlp-ui-js-generator-maven-plugin</artifactId>
+  <versioning>
+    <latest>1.3-SNAPSHOT</latest>
+    <versions>
+      <version>1.3-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20170213110701</lastUpdated>
+  </versioning>
+</metadata>
