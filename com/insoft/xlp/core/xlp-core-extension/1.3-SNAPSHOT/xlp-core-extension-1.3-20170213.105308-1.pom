@@ -1,0 +1,34 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.insoft.xlp.core</groupId>
+		<artifactId>xlp-core</artifactId>
+		<version>1.3-SNAPSHOT</version>
+	</parent>
+	
+	<artifactId>xlp-core-extension</artifactId>
+	<version>1.3-SNAPSHOT</version>
+	
+	<packaging>pom</packaging>
+
+	<name>XLP :: Core :: Extension</name>
+	<description>Extension management</description>
+	
+	<modules>
+		<module>base</module>
+		<module>annotation-loader</module>
+	</modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+        </dependency>
+    </dependencies>
+
+</project>
