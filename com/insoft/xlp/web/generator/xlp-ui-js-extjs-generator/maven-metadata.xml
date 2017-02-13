@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>com.insoft.xlp.web.generator</groupId>
+  <artifactId>xlp-ui-js-extjs-generator</artifactId>
+  <versioning>
+    <versions>
+      <version>1.3-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20170213110555</lastUpdated>
+  </versioning>
+</metadata>
