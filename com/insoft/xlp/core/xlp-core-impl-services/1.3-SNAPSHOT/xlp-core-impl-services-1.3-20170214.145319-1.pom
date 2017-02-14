@@ -1,0 +1,150 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.insoft.xlp.core</groupId>
+        <artifactId>xlp-core-impl</artifactId>
+        <version>1.3-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>xlp-core-impl-services</artifactId>
+    <version>1.3-SNAPSHOT</version>
+
+    <packaging>jar</packaging>
+
+    <name>XLP :: Core :: Impl :: Services</name>
+    <description>Common services implementation</description>
+
+    <properties>
+        <wiser.port>2525</wiser.port><!-- port used for Mail-related ITs -->
+    </properties>
+
+    <build>
+        <testResources>
+            <testResource>
+                <directory>${project.basedir}/src/test/resources</directory>
+                <filtering>true</filtering>
+            </testResource>
+        </testResources>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.insoft.xlp.core</groupId>
+            <artifactId>xlp-core-model-api</artifactId>
+            <version>1.3-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.insoft.xlp.core</groupId>
+            <artifactId>xlp-core-persistence-query-store</artifactId>
+            <version>1.3-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.insoft.xlp.core</groupId>
+            <artifactId>xlp-core-extension-annotation-loader</artifactId>
+            <version>1.3-SNAPSHOT</version>
+        </dependency>
+        <!-- for AD trust -->
+        <dependency>
+            <groupId>com.insoft.xlp.core</groupId>
+            <artifactId>xlp-core-impl-winrm</artifactId>
+            <version>1.3-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jgrapht</groupId>
+            <artifactId>jgrapht-core</artifactId>
+            <version>0.9.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+        </dependency>
+        <!-- dependencies for guava -->
+        <!--<dependency>-->
+            <!--<groupId>com.google.code.findbugs</groupId>-->
+            <!--<artifactId>jsr305</artifactId>-->
+            <!--<version>1.3.9</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>javax.inject</groupId>-->
+            <!--<artifactId>javax.inject</artifactId>-->
+            <!--<version>1</version>-->
+        <!--</dependency>-->
+
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-core</artifactId>
+            <version>${version.spring.security}</version>
+        </dependency>
+        <dependency>    <!-- beans and expression overwrite Spring Security dependencies -->
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-expression</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+            <version>${version.spring}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-ldap</artifactId>
+            <version>${version.spring.security}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>spring-tx</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-oxm</artifactId>
+            <version>${version.spring}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-lang</groupId>
+                    <artifactId>commons-lang</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+        </dependency>
+
+        <!--Notification-->
+        <dependency>
+            <groupId>javax.mail</groupId>
+            <artifactId>javax.mail-api</artifactId>
+            <version>${version.javax.mail}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.mail</groupId>
+            <artifactId>javax.mail</artifactId>
+            <version>${version.javax.mail}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.velocity</groupId>
+            <artifactId>velocity</artifactId>
+            <version>1.7</version>
+        </dependency>
+        <dependency>
+            <groupId>org.subethamail</groupId>
+            <artifactId>subethasmtp-wiser</artifactId>
+            <version>1.2</version>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+</project>
